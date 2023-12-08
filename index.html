@@ -36,22 +36,27 @@
   <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore-compat.js"></script>
   <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyAzcwgZuLA7dO9g4sQhXQVTUgCo0M8m2qM",
-      authDomain: "grocerylist-91956.firebaseapp.com",
-      databaseURL: "https://grocerylist-91956.firebaseio.com",
-      projectId: "grocerylist-91956",
-      storageBucket: "grocerylist-91956.appspot.com",
-      messagingSenderId: "813812426276",
-      appId: "1:813812426276:web:93e5897af12892ff78dab1",
-      measurementId: "G-VZ83BTR72T"
-    }; 
+   const firebaseConfig = {
+    apiKey: "AIzaSyCzzJz0lxJn9XV-jGo9x91sLcV-Q8ky7Yc",
+    authDomain: "database2023project.firebaseapp.com",
+    projectId: "database2023project",
+    storageBucket: "database2023project.appspot.com",
+    messagingSenderId: "382994926699",
+    appId: "1:382994926699:web:673d62de6b68683ae8b52e",
+    measurementId: "G-QPLL42Y96M"
+  };
     // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       const db = firebase.firestore();
 
     // Save the list to database
-
+  $("#save").click(function(){
+    //testing if database is connected
+    $(this).text("Saved");
+    db.collection("shoppinglist").add({
+      item: "milk"
+    });
+  });
 
   </script>
 
